@@ -8,14 +8,15 @@ export default gql`
     
     type Booking {
         id: ID!
-        date: String!
         vehicle: String!
+        startDate: String!
+        endDate: String!
         createdAt: String!
         updatedAt: String!
     }
     extend type Mutation {
-        createBooking(date: String!, vehicle: String!): Booking!
-        updateBooking(id: ID!, date: String!, vehicle: String!): Booking!
+        createBooking(vehicle: String!, startDate: String!, endDate: String!): Booking!
+        updateBooking(id: ID!, vehicle: String!, startDate: String!, endDate: String!): Booking!
         deleteBooking(id: ID!): Boolean!
     }
     `;
